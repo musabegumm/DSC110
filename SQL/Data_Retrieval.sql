@@ -45,19 +45,43 @@ INSERT INTO Visits (visit_id, patient_id, visit_date, diagnosis, cost) VALUES
 
 SELECT * from Visits;
 
---select specific columns
---where
---order by
---join
---count
---count distinct
---group by
---aggregate functions: count, sum, avg, min, max
---case when
---window functions
---CTE (with)
+
+select * from Patients;
+
+--Specific rows/records
+select * from Patients where city = 'Boston';
+
+--Now select records for only Female patients
+
+--Specific fields
+Select patient_id, name, age from Patients;
+
+--Now select name and city from patients
 
 
+--Single summary stats
+--How many rows are there?
+select count(*) from patients;
+
+--How many distinct genders are there?
+select count(distinct gender) from Patients;
+
+--What is the average age?
+select avg(age) from Patients;
+
+
+--Summarazing by another variable
+select gender, avg(age)
+from Patients
+group by gender;
+
+--sort/order by
+select gender, avg(age)
+from Patients
+group by gender
+order by 2 desc;
+
+--Joins
 --inner join
 SELECT 
     p.name,
@@ -79,3 +103,10 @@ SELECT
 FROM Patients p
 LEFT JOIN Visits v ON p.patient_id = v.patient_id;
 
+
+
+
+---Advanced---
+--case when
+--window functions
+--CTE (with)
