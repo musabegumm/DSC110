@@ -1,1 +1,4 @@
-#First 
+#First command to say Hello World!
+print("Hello World")
+
+o <- 1
