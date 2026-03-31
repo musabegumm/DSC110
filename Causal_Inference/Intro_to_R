@@ -1,4 +1,6 @@
 #First command to say Hello World!
 print("Hello World")
 
-o <- 1
+a <- 1
+b <- 2
+a + b
